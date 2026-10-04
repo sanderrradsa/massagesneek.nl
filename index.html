@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cristina Ontspanningsmassage | Massage Sneek</title>
+
+  <!-- Bootstrap 5 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
+  <style>
+    :root {
+      --primary: #7a5c58;
+      --primary-dark: #604542;
+      --cream: #f8f4ef;
+      --light: #fcfaf7;
+      --text: #3f3836;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background-color: var(--light);
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 500;
+    }
+
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.97);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    .navbar-brand {
+      color: var(--primary) !important;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .nav-link {
+      color: #514845 !important;
+      margin-left: 15px;
+    }
+
+    .nav-link:hover {
+      color: var(--primary) !important;
+    }
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(
+          rgba(62, 48, 44, 0.45),
+          rgba(62, 48, 44, 0.45)
+        ),
+        url("https://massagesneek.nl/images/image1salon.jpg")
+        center/cover no-repeat;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      line-height: 1.05;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      line-height: 1.7;
+    }
+
+    .btn-primary-custom {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      color: white;
+      padding: 13px 28px;
+      border-radius: 30px;
+    }
+
+    .btn-primary-custom:hover {
+      background-color: var(--primary-dark);
+      border-color: var(--primary-dark);
+      color: white;
+    }
+
+    .btn-outline-custom {
+      border: 1px solid white;
+      color: white;
+      padding: 13px 28px;
+      border-radius: 30px;
+    }
+
+    .btn-outline-custom:hover {
+      background: white;
+      color: var(--primary);
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      max-width: 700px;
+      margin: auto;
+      color: #756c68;
+      line-height: 1.8;
+    }
+
+    .about-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .about-text {
+      line-height: 1.9;
+      color: #625956;
+    }
+
+    .feature-box {
+      background: white;
+      padding: 35px 25px;
+      border-radius: 8px;
+      height: 100%;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .feature-icon {
+      width: 65px;
+      height: 65px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: var(--cream);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+    }
+
+    .price-card {
+      background: white;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 100%;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.11);
+    }
+
+    .price-header {
+      background: var(--primary);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .price {
+      font-size: 2.7rem;
+      font-weight: 600;
+    }
+
+    .price-body {
+      padding: 35px;
+    }
+
+    .price-body li {
+      margin-bottom: 13px;
+      color: #665e5a;
+    }
+
+    .price-body li i {
+      color: var(--primary);
+      margin-right: 8px;
+    }
+
+    .info-section {
+      background-color: var(--cream);
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .info-list i {
+      color: var(--primary);
+      font-size: 1.3rem;
+      min-width: 25px;
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: bottom;
+    }
+
+    .contact-section {
+      background: var(--primary);
+      color: white;
+    }
+
+    .contact-section h2 {
+      color: white;
+    }
+
+    .contact-info {
+      font-size: 1.1rem;
+      line-height: 2;
+    }
+
+    .phone-number {
+      color: white;
+      font-size: 1.7rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .phone-number:hover {
+      color: #eadbd7;
+    }
+
+    footer {
+      background: #302927;
+      color: #cfc6c2;
+      padding: 25px 0;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 570px;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .about-image {
+        height: 350px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+
+    <a class="navbar-brand" href="#">
+      <i class="bi bi-flower1 me-2"></i>
+      Cristina Ontspanningsmassage
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="#over">
+            Over de massage
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#prijzen">
+            Prijzen
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#informatie">
+            Informatie
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+
+      <p class="text-uppercase mb-3" style="letter-spacing: 3px;">
+        Massage Sneek
+      </p>
+
+      <h1 class="mb-4">
+        Ontspanning voor lichaam & geest
+      </h1>
+
+      <p class="mb-4">
+        Professionele klassieke massage in een nette,
+        rustgevende salon voor een betaalbare prijs.
+      </p>
+
+      <div class="d-flex flex-wrap gap-3">
+
+        <a href="#prijzen" class="btn btn-primary-custom">
+          Bekijk behandelingen
+        </a>
+
+        <a href="tel:0641607219" class="btn btn-outline-custom">
+          <i class="bi bi-telephone me-2"></i>
+          Bel voor een afspraak 06 - 41 60 72 19
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- OVER -->
+<section id="over" class="section">
+  <div class="container">
+
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-6">
+        <img
+          src="img/salon.jpg"
+          alt="Rustgevende massagesalon in Sneek"
+          class="about-image"
+        >
+      </div>
+
+      <div class="col-lg-6">
+
+        <p class="text-uppercase mb-2"
+           style="letter-spacing: 2px; color: #9a827d;">
+          Welkom
+        </p>
+
+        <h2 class="section-title">
+          Een moment van rust
+        </h2>
+
+        <p class="about-text">
+          U bent bij Cristina Ontspanningsmassage Sneek
+          in goede handen. U krijgt een weldadige klassieke
+          massage op een elektrische, comfortabel verwarmde
+          massagetafel.
+        </p>
+
+        <p class="about-text">
+          Tijdens de behandeling wordt geurloze warme olie
+          gebruikt, geschikt voor ieder huidtype.
+        </p>
+
+        <p class="about-text">
+          Cristina is een gediplomeerd masseuse met ervaring
+          sinds 1995. Met ruim 30 jaar ervaring staat
+          persoonlijke aandacht en ontspanning centraal.
+        </p>
+
+        <div class="mt-4">
+          <strong>
+            <i class="bi bi-check-circle me-2"
+               style="color: var(--primary);"></i>
+            Zowel voor hem als voor haar
+          </strong>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- KENMERKEN -->
+<section class="section info-section">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <p class="text-uppercase mb-2"
+         style="letter-spacing: 2px; color: #9a827d;">
+        Waarom kiezen voor Cristina?
+      </p>
+
+      <h2 class="section-title">
+        Persoonlijke aandacht & ontspanning
+      </h2>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="feature-box">
+
+          <div class="feature-icon">
+            <i class="bi bi-award"></i>
+          </div>
+
+          <h4>30+ jaar ervaring</h4>
+
+          <p class="text-muted mb-0">
+            Gediplomeerd masseuse met ervaring
+            sinds 1995.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-box">
+
+          <div class="feature-icon">
+            <i class="bi bi-heart"></i>
+          </div>
+
+          <h4>Persoonlijke behandeling</h4>
+
+          <p class="text-muted mb-0">
+            Een rustige behandeling met persoonlijke
+            aandacht voor iedere klant.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-box">
+
+          <div class="feature-icon">
+            <i class="bi bi-car-front"></i>
+          </div>
+
+          <h4>Gratis parkeren</h4>
+
+          <p class="text-muted mb-0">
+            Er is gratis parkeergelegenheid
+            direct voor de deur.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PRIJZEN -->
+<section id="prijzen" class="section">
+  <div class="container">
+
+    <div class="text-center mb-5">
+
+      <p class="text-uppercase mb-2"
+         style="letter-spacing: 2px; color: #9a827d;">
+        Behandelingen
+      </p>
+
+      <h2 class="section-title">
+        Kies uw massage
+      </h2>
+
+      <p class="section-subtitle">
+        U kunt kiezen uit twee uitgebreide klassieke
+        massagebehandelingen.
+      </p>
+
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- 60 MIN -->
+      <div class="col-lg-5 col-md-6">
+        <div class="price-card">
+
+          <div class="price-header">
+
+            <h3>Massage 60 minuten</h3>
+
+            <div class="price">
+              €90
+            </div>
+
+            <span>
+                            per behandeling
+                        </span>
+
+          </div>
+
+          <div class="price-body">
+
+            <p>
+              Een massage van top tot teen,
+              inclusief:
+            </p>
+
+            <ul class="list-unstyled">
+
+              <li>
+                <i class="bi bi-check"></i>
+                Gezichtsmassage
+              </li>
+
+              <li>
+                <i class="bi bi-check"></i>
+                Arm- en voetmassage
+              </li>
+
+              <li>
+                <i class="bi bi-check"></i>
+                Klassieke lichaamsmassage
+              </li>
+
+              <li>
+                <i class="bi bi-check"></i>
+                Warme, geurloze massageolie
+              </li>
+              <li>
+                <i class=""></i>
+              </li>
+            </ul>
+
+            <a
+              href="tel:0641607219"
+              class="btn btn-primary-custom w-100 mt-3"
+            >
+              Bel voor een afspraak 06 - 41 60 72 19
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 90 MIN -->
+      <div class="col-lg-5 col-md-6">
+
+        <div class="price-card">
+
+          <div class="price-header">
+
+            <h3>Massage 90 minuten</h3>
+
+            <div class="price">
+              €120
+            </div>
+
+            <span>
+                            per behandeling
+                        </span>
+
+          </div>
+
+          <div class="price-body">
+
+            <p>
+              Een complete massage van top tot teen,
+              inclusief:
+            </p>
+
+            <ul class="list-unstyled">
+
+              <li>
+                <i class="bi bi-check"></i>
+                Buik- en borstkas
+              </li>
+
+              <li>
+                <i class="bi bi-check"></i>
+                Armen en voeten
+              </li>
+
+              <li>
+                <i class="bi bi-check"></i>
+                Voor- en achterkant
+              </li>
+
+              <li>
+                <i class="bi bi-check"></i>
+                Billen
+              </li>
+
+              <li>
+                <i class="bi bi-check"></i>
+                Extra lange gezichtsmassage
+              </li>
+
+            </ul>
+
+            <a
+              href="tel:0641607219"
+              class="btn btn-primary-custom w-100 mt-3"
+            >
+              Bel voor een afspraak 06 - 41 60 72 19
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- TWEEDE AFBEELDING -->
+<section class="section info-section">
+
+  <div class="container">
+
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-6 order-lg-2">
+
+        <img
+          src="img/boating.jpg"
+          alt="Sneek en omgeving"
+          class="gallery-image"
+        >
+
+      </div>
+
+      <div class="col-lg-6 order-lg-1">
+
+        <h2 class="section-title">
+          Waarom een massage?
+        </h2>
+
+        <p class="about-text">
+          Een massage kan helpen om tot rust te komen
+          en even afstand te nemen van de dagelijkse
+          drukte.
+        </p>
+
+        <p class="about-text">
+          Gun uzelf een moment van ontspanning voor
+          lichaam en geest.
+        </p>
+
+        <p class="about-text">
+          De salon is rustig en persoonlijk en werkt
+          uitsluitend op afspraak.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- INFORMATIE -->
+<section id="informatie" class="section">
+
+  <div class="container">
+
+    <div class="text-center mb-5">
+
+      <p class="text-uppercase mb-2"
+         style="letter-spacing: 2px; color: #9a827d;">
+        Praktische informatie
+      </p>
+
+      <h2 class="section-title">
+        Goed om te weten
+      </h2>
+
+    </div>
+
+    <div class="row justify-content-center">
+
+      <div class="col-lg-8">
+
+        <ul class="info-list">
+
+          <li>
+            <i class="bi bi-calendar-check"></i>
+            <div>
+              <strong>Uitsluitend op afspraak</strong><br>
+              U kunt 7 dagen per week terecht.
+            </div>
+          </li>
+
+          <li>
+            <i class="bi bi-clock"></i>
+            <div>
+              <strong>Openingstijden</strong><br>
+              Van 11:00 tot 23:00 uur.
+              In het weekend en na 18:00 uur geldt
+              een meerprijs.
+            </div>
+          </li>
+
+          <li>
+            <i class="bi bi-door-open"></i>
+            <div>
+              <strong>Kom op tijd</strong><br>
+              U bent maximaal 5 minuten voor uw
+              gemaakte afspraak welkom.
+            </div>
+          </li>
+
+          <li>
+            <i class="bi bi-droplet"></i>
+            <div>
+              <strong>Hygiëne</strong><br>
+              Wij verwachten dat u schoon naar de
+              afspraak komt. Heeft u geen mogelijkheid
+              om vooraf te douchen, dan kunt u voor
+              €5,00 extra gebruikmaken van een douche.
+            </div>
+          </li>
+
+          <li>
+            <i class="bi bi-shield-check"></i>
+            <div>
+              <strong>Privacy</strong><br>
+              Uw privacy wordt gewaarborgd.
+            </div>
+          </li>
+
+          <li>
+            <i class="bi bi-gift"></i>
+            <div>
+              <strong>Cadeaubonnen</strong><br>
+              Tevens zijn er cadeaubonnen verkrijgbaar.
+            </div>
+          </li>
+
+          <li>
+            <i class="bi bi-p-circle"></i>
+            <div>
+              <strong>Parkeren</strong><br>
+              Er is gratis parkeergelegenheid voor de deur.
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+
+  <div class="container">
+
+    <div class="row justify-content-center text-center">
+
+      <div class="col-lg-8">
+
+        <p class="text-uppercase mb-3"
+           style="letter-spacing: 3px; opacity: .8;">
+          Cristina Ontspanningsmassage
+        </p>
+
+        <h2 class="mb-4">
+          Klaar voor een moment van ontspanning?
+        </h2>
+
+        <p class="contact-info mb-4">
+          Maak telefonisch een afspraak voor uw
+          ontspannende klassieke massage.
+        </p>
+
+        <a
+          href="tel:0641607219"
+          class="phone-number d-inline-block mb-4"
+        >
+          <i class="bi bi-telephone me-2"></i>
+          06 - 41 60 72 19
+        </a>
+
+        <br>
+
+        <a
+          href="tel:0641607219"
+          class="btn btn-light btn-lg rounded-pill px-4"
+        >
+          Bel voor een afspraak
+        </a>
+
+        <div class="mt-5">
+
+          <p class="mb-1">
+            <i class="bi bi-geo-alt me-2"></i>
+            Worp Tjaardastraat 30
+          </p>
+
+          <p>
+            Sneek
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="container">
+
+    <div class="row align-items-center">
+
+      <div class="col-md-6 text-center text-md-start">
+        <strong>
+          Cristina Ontspanningsmassage
+        </strong>
+      </div>
+
+      <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+        Massage Sneek
+      </div>
+
+    </div>
+
+    <hr style="border-color: rgba(255,255,255,.15);">
+
+    <div class="text-center small">
+      © 2025 Cristina Ontspanningsmassage · Sneek
+    </div>
+    <div class="text-center small">
+      Gemaakt door: Sander Burger
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>
